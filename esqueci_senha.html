@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Universidade Phoenix</title>
+</head>
+<body>
+    <form  name="formulario" method="post">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" required>
+        <br>
+        <label for="checkSenha">Confirmar Senha</label>
+        <input type="password" name="checkSenha" id="checkSenha" required oninput="validaSenha(this)">
+        <br>
+        <button type="submit" class="enviar">Enviar</button>
+        <button type="reset">Limpar</button>
+    </form>
+
+    <script type="application/javascript">
+        function validaSenha(input) {
+            if(input.value != document.formulario.senha.value){
+                input.setCustomValidity('As senhas não conferem!');
+            }
+        }
+    </script>
+</body>
+</html>
